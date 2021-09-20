@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# MTXML
 
-You can use the [editor on GitHub](https://github.com/MajorTerminal/MTXML/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MajorTerminal/MTXML/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- [Описание](2785358.md)
+- [Подключение](2850985.md)
+- [Общая структура сообщения](2851012.md)
+- [Базовые типы данных](2851022.md)
+- [Системный ответ на полученное сообщение](2785389.md)
+- [Запрос товарного справочника](2785419.md)
+- [Товарный справочник](2916447.md)
+- [Запрос справочника получателей](2785449.md)
+- [Справочник получателей](2785428.md)
+- [Заявка на прием товаров на склад](2785463.md)
+- [Отчет по факту приема товаров на склад](2851106.md)
+- [Отчет по факту расхождений при приеме товаров на склад](2785484.md)
+- [Заявка на отгрузку товаров со склада](2851137.md)
+- [Отчет по факту резервирования товаров на складе](2883700.md)
+- [Отчет по факту комплектации товаров на складе](2851158.md)
+- [Отчет по факту отгрузки товаров со склада](2785511.md)
+- [Заявка на перемещение товаров на складе](2851185.md)
+- [Отчет по факту перемещения товаров на складе](2883736.md)
+- [Заявка на отмену документа](2916548.md)
+- [Отчет по факту отмены документа](2883755.md)
+- [Запрос выборочной инвентаризации](2851246.md)
+- [Отчет по факту выборочной инвентаризации товаров на складе](2883775.md)
+- [Запрос отчета по остаткам склада](2916600.md)
+- [Отчет по остаткам склада](2851284.md)
+- [Запрос отчета по движениям товаров на складе](2785389.md)
+- [Отчет по движениям товаров на складе](2851308.md)
+- [Запрос результатов сканирования уникальных идентификаторов товара («Честный знак»)](2883803.md)
+- [Отчёт по результатам сканирования уникальных идентификаторов товара («Честный знак»)](2785628.md)
+- [Заявка на создание и обновление пропуска](2785638.md)
+- [Запрос статуса заявок](23494657.md)
+- [Отчет по статусам заявок](23494707.md)
+- [Смена статуса заявки](61636619.md)
+- [Заявка на кросс-докинг](61636707.md)
