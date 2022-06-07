@@ -102,6 +102,20 @@
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode1" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Идентификатор заказа маркетплейса 1" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode2" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Идентификатор заказа маркетплейса 1" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -139,6 +153,13 @@
                       <xs:annotation>
                         <xs:appinfo>
                           <b:fieldInfo notes="Штрихкод товара" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="CustomerItemCode" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Код товара в системе клиента" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
@@ -267,6 +288,13 @@
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="HonestSignStatus" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Статус кода марикровки на товаре(у группы товаров)" />
+                        </xs:appinfo>
+                      </xs:annotation>
                     </xs:element>
                   </xs:sequence>
                 </xs:complexType>
