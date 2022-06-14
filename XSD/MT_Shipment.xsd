@@ -126,6 +126,13 @@
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="CompletedDate" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Требуемая дата готовности груза" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
               <xs:element minOccurs="0" maxOccurs="1" default="0" name="UnionType" type="xs:int">
                 <xs:annotation>
                   <xs:appinfo>
@@ -978,6 +985,13 @@
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode3" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Идентификатор заказа маркетплейса 3" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1381,6 +1395,7 @@
               <xs:element minOccurs="0" maxOccurs="1" name="License" type="xs:string" />
               <xs:element minOccurs="0" maxOccurs="1" name="DriverPhoneNumber" type="xs:string" />
               <xs:element name="Comment" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" name="PermitGUID" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
