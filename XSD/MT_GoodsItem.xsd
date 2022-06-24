@@ -568,6 +568,21 @@
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
+                    <xs:element name="StickerNo" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="TemperatureStorageConditions" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Температурный режим хранения" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="TemperatureTranspConditions" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Температурный режим транспортировки" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
