@@ -620,7 +620,7 @@
                                     </xs:appinfo>
                                   </xs:annotation>
                                 </xs:element>
-                                <xs:element minOccurs="0" maxOccurs="1" name="UnitOfMeasure" type="xs:string">
+                                <xs:element minOccurs="0" maxOccurs="1" name="UnitOfMeasureCode" type="xs:string">
                                   <xs:annotation>
                                     <xs:appinfo>
                                       <b:fieldInfo notes="Единица измерения варианта идентификатора маркетплейса.  Если не заполнена - заполняется как базовая ЕИ товара" />
