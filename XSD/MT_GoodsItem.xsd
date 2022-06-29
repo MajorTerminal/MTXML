@@ -583,6 +583,56 @@
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceIdentifierList">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:recordInfo notes="Список идентификаторов товара на стороне маркетплейсов" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="MarketplaceIdentifier">
+                            <xs:annotation>
+                              <xs:appinfo>
+                                <b:recordInfo notes="Идентификаторы товара на стороне маркетплейса" />
+                              </xs:appinfo>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="1" maxOccurs="1" name="MarketplaceCode" type="xs:string">
+                                  <xs:annotation>
+                                    <xs:appinfo>
+                                      <b:fieldInfo notes="Код маркетплейса" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="1" maxOccurs="1" name="MarketplaceProduct" type="xs:string">
+                                  <xs:annotation>
+                                    <xs:appinfo>
+                                      <b:fieldInfo notes="Идентификатор товара создаваемый на стороне маркетплейса" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="1" name="CustomerProduct" type="xs:string">
+                                  <xs:annotation>
+                                    <xs:appinfo>
+                                      <b:fieldInfo notes="Идентифиатор товара сгенерированный на стороне продавца" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="1" name="UnitOfMeasure" type="xs:string">
+                                  <xs:annotation>
+                                    <xs:appinfo>
+                                      <b:fieldInfo notes="Единица измерения варианта идентификатора маркетплейса.  Если не заполнена - заполняется как базовая ЕИ товара" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
