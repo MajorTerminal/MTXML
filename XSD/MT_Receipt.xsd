@@ -142,10 +142,10 @@
                 </xs:annotation>
               </xs:element>
               <xs:element name="UpdateGoods" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="CreateCustomerInfo" type="xs:boolean">
+              <xs:element minOccurs="0" maxOccurs="1" name="CreateCustomerInfo" type="xs:int">
                 <xs:annotation>
                   <xs:appinfo>
-                    <b:fieldInfo notes="Флаг создания записи ожидаемых приходов по грузоместам" />
+                    <b:fieldInfo notes="Признак создания записи ожидаемых приходов по грузоместам" />
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
