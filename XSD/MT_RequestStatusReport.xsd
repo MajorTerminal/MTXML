@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-16"?>
 <xs:schema xmlns="http://Core.MTXML.Schema.MT_RequestStatusReport" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:ns0="http://MT.BTS.DataExchange.MT_RequestStatusReport" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://MT.BTS.DataExchange.MT_RequestStatusReport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="RequestStatusReport">
     <xs:complexType>
@@ -6,23 +6,23 @@
         <xs:element name="ReportHeader">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MessageID" type="xs:string" />
-              <xs:element name="CustomerCode" type="xs:string" />
-              <xs:element name="ProjectCode" type="xs:string" />
-              <xs:element name="StockCode" type="xs:string" />
-              <xs:element name="DocumentType" type="xs:string" />
+              <xs:element minOccurs="1" name="MessageID" type="xs:string" />
+              <xs:element minOccurs="1" name="CustomerCode" type="xs:string" />
+              <xs:element minOccurs="1" name="ProjectCode" type="xs:string" />
+              <xs:element minOccurs="1" name="StockCode" type="xs:string" />
+              <xs:element minOccurs="1" name="DocumentType" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="StatusReportHeader">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DocumentNumber" type="xs:unsignedInt" />
-              <xs:element name="RequestNumber" type="xs:unsignedInt" />
-              <xs:element name="PermitNumber" type="xs:unsignedInt" />
-              <xs:element name="DocumentDate" type="xs:date" />
-              <xs:element name="StatusDateTime" type="xs:dateTime" />
-              <xs:element name="Status" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="DocumentNumber" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1"  name="RequestNumber" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" maxOccurs="1"  name="PermitNumber" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" maxOccurs="1"  name="DocumentDate" type="xs:date" />
+              <xs:element minOccurs="1" maxOccurs="1"  name="StatusDateTime" type="xs:dateTime" />
+              <xs:element minOccurs="1" maxOccurs="1"  name="Status" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
