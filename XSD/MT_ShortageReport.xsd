@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns="http://MT.BTS.DataExchange.MT_ShortageReport" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://MT.BTS.DataExchange.MT_ShortageReport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ShortageReport">
+    <xs:annotation>
+      <xs:appinfo>
+        <b:recordInfo notes="Отчет по физическому недобору товаров" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReportHeader">
+          <xs:annotation>
+            <xs:appinfo>
+              <b:recordInfo notes="Стандартный заголовок сообщения" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="1" name="MessageID" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Уникальный код сообщения" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="CustomerCode" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Уникальный код клиента" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="ProjectCode" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Уникальный код проекта клиента" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="StockCode" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Уникальный код склада" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="ShortageHeader">
+          <xs:annotation>
+            <xs:appinfo>
+              <b:recordInfo notes="Заголовок документа" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="1" name="ShipmentNumber" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Номер документа на отгрузку товаров" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="ShortageDate" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Дата документа" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference1" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 1" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference2" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 2" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference3" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 3" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference4" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 4" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference5" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 5" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference6" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 6" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference7" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 7" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference8" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 8" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference9" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 9" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+			  <xs:element minOccurs="0" maxOccurs="1" name="ShortageReference10" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Расширенные данные заказа 10" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="ShortageRows">
+          <xs:annotation>
+            <xs:appinfo>
+              <b:recordInfo notes="Строки отчета" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="ShortageRow">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:recordInfo notes="Строка отчета по физическому недобору товаров" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Article" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Артикул" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+					<xs:element minOccurs="0" maxOccurs="1" name="Barcode" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<b:fieldInfo notes="Штрихкод товара"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="CustomerItemCode" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<b:fieldInfo notes="Код товара в системе клиента"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="UOM" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Единица измерения" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="ActualQty" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Количество подобранного товара" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+					<xs:element minOccurs="1" maxOccurs="1" name="ShortageQty" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Количество неподобранного товара" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ShortageReport-Summary">
+			<xs:annotation>
+				<xs:appinfo>
+					<b:recordInfo notes="Итоговое кол-во строк"/>
+				</xs:appinfo>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="1" name="TotalLines" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<b:recordInfo notes="Кол-во"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
