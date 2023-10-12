@@ -277,12 +277,19 @@
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element minOccurs="0" maxOccurs="1" name="HonestSignPack">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element maxOccurs="unbounded" name="HonestSignValue" type="xs:string" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
+                                  <xs:annotation>
+                                      <xs:appinfo>
+                                        <b:fieldInfo notes="SSCC ЧЗ" />
+                                      </xs:appinfo>
+                                    </xs:annotation>
+                                  </xs:element>
+                                <xs:element maxOccurs="unbounded" name="HonestSignValue" type="xs:string" >
+                                  <xs:annotation>
+                                    <xs:appinfo>
+                                      <b:fieldInfo notes="Код ЧЗ в Base64" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                              </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
