@@ -27,7 +27,7 @@
             </xs:appinfo>
           </xs:annotation>
         </xs:element>
-	<xs:element minOccurs="1" maxOccurs="1" name="DocumentNumber" type="xs:string" />
+	<xs:element minOccurs="0" maxOccurs="1" name="DocumentNumber" type="xs:string" />
         <xs:element minOccurs="1" maxOccurs="1" name="Description" type="xs:string">
           <xs:annotation>
             <xs:appinfo>
