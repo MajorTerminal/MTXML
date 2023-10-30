@@ -134,10 +134,17 @@
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element minOccurs="0" maxOccurs="1" name="CreateGoods" type="xs:boolean">
+              <xs:element minOccurs="1" maxOccurs="1" name="CreateGoods" type="xs:boolean">
                 <xs:annotation>
                   <xs:appinfo>
                     <b:fieldInfo notes="Флаг создания новых товаров" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="UpdateGoods" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:fieldInfo notes="Флаг обновления товаров" />
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
