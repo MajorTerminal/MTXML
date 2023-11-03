@@ -1,0 +1,98 @@
+# Заявка на перестикеровку товаров со склада
+
+## Назначение и описание
+Передается из ERP в WMS для создания новой заявки на перестикеровку товаров, а так же при необходимости обновления уже существующего документа.
+
+Обновление уже существующего в WMS документа возможно до тех пор, пока документ не взят в работу, в случае, когда документ уже взят в работу, то в ответ придет сообщение с ошибкой обработки документа по указанной причине. Поиск документов осуществляется только по полю «ShipmentNumber».
+
+В случае отсутствия описания товаров в WMS в момент загрузки документа, то данный документ не будет записан в систему, а в ответ придет сообщение с указанием отсутствующих описаний товаров.
+
+В одном файле может быть передан только один документ.
+
+## Описание полей
+
+Уровень | Тег | Описание | Частота | Тип данных | Размер поля | Комментарий
+--------|-----|----------|---------|------------|-------------|------------
+0       | DocumentSticker |                                                    | 1..1    |            |             |
+1       | DocumentHeader   | Стандартный заголовок сообщения                   | 1..1    |            |             | Общая структура сообщения                                 
+1       | StickerHeader   |                                                     1..1     |            |             |
+2       | DocumentNumber   | Уникальный номер заявки на отгрузку товаров       | 1..1    | String     | 50          |                                                           
+2       | ActionType       | Тип действия заявки                               | 0..1    | String     | 10          |                                                           
+2       | ExtField1        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField2        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField3        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField4        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField5        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField6        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField7        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField8        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField9        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | ExtField10       | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+2       | Comment          | Комментарий                                       | 0..1    | String     | 250         |                                                           
+1       | StickerRows     |                                                    | 1..1    |            |             |
+2       | StickerRow      | Строк заявки                                       | 1..n    |            |             |                                                           
+3       | Article          | Артикул товара                                    | 1..1    | String     | 100         | Если отсутствует, то обязательно заполнить  Barcode  
+3       | Barcode          | Штрихкод товара                                   | 0..1    | String     | 100         |   
+3       | CustomerItemCode | Код товара в системе клиента                      | 0..1    | String     | 100         |       
+3       | UOM              | Единица измерения                                 | 1..1    | String     | 10          |                                                           
+3       | Quantity         | Количество                                        | 1..1    | Decimal    |             |                                                           
+3       | ExtField1        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField2        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField3        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField4        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField5        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField6        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField7        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField8        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField9        | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | ExtField10       | Расширенные данные                                | 0..1    | String     | 80          |                                                           
+3       | SerialNo         | Серийный номер                                    | 0..1    | String     | 20          |                                                           
+3       | ParentSerialNo   | Серийный номер грузоместа                         | 0..1    | String     | 20          |                                                           
+3       | BestBeforeDate   | Срок годности                                     | 0..1    | DateTime   |             |
+3       | LotNo            | Номер партии (Технический лот)                    | 0..1    | String     | 100         |
+3       | BatchCode        | Номер партии                                      | 0..1    | String     | 100         |                                                           
+3       | LotField1        | Расширенные данные                                | 0..1    | String     | 100         |                                                           
+3       | LotField2        | Расширенные данные                                | 0..1    | String     | 100         |                                                           
+3       | LotField3        | Расширенные данные                                | 0..1    | String     | 100         |                                                           
+3       | LotField4        | Расширенные данные                                | 0..1    | String     | 100         |                                                           
+3       | LotField5        | Расширенные данные                                | 0..1    | String     | 100         |                                                           
+3       | LotCostCenter    | Центр ответственности партии                      | 0..1    | String     | 50          |                                                           
+3       | HonestSignValue  | Код ЧЗ в формате Base64                           | 0..1    | Base64     |             |                                                           
+3       | Sticker          | Стикер товара                                     | 0..1    |            |             |                                                           
+4       | Data             | Файл стикера в формате Base64                     | 1..1    | Base64     |             |                                                           
+4       | Extension        | Расширение файла этикетки                         | 1..1    | String     | 5           |                                                           
+4       | Type             | Тип этикетки                                      | 1..1    | String     | 10          |   HS – для стикера ЧЗ, ITEM – для этикетки товара                                                        
+
+## Описание схемы
+<a href="https://github.com/MajorTerminal/MTXML/blob/master/XSD/MT_DocumentSticker.xsd" rel="XSD">![Foo](https://user-images.githubusercontent.com/22858622/134012526-73d1b128-a2cd-4d14-8a13-10f81a57c04f.png)</a>
+
+## Пример XML
+```
+<DocumentSticker xmlns="http://Core.MTXML.Schema.MT_DocumentSticker">
+	<DocumentHeader>
+		<MessageID>cf590d9c-3c4c-4e64-a043-2e9a4dc6d372</MessageID>
+		<CustomerCode>К00000</CustomerCode>
+		<ProjectCode>MAJOR</ProjectCode>
+		<StockCode>SLOBODA</StockCode>
+	</DocumentHeader>
+	<StickerHeader>
+		<DocumentNumber>7b7e48dc-7991-11ee-83c6-00155dc8200f</DocumentNumber>
+		<ActionType>RAZM_SH-I</ActionType>
+	</StickerHeader>
+	<StickerRows>
+		<StickerRow>
+			<Article>1849-923-402-204</Article>
+			<CustomerItemCode>7526affa-eb1f-11ed-9da9-00155d011401</CustomerItemCode>
+			<Barcode>4650298947936</Barcode>
+			<UOM>шт</UOM>
+			<Quantity>1</Quantity>
+			<Sticker>
+				<Data>iVBORw0KGgoAAAANSUhEUgAAAq0AAANqCAIAAAAopOVEAAAAAXNSR0IB2cksfwAA</Data>
+				<Extension>png</Extension>
+				<Type>HS</Type>
+			</Sticker>
+			<HonestSignValue>MDEyMQ==</HonestSignValue>
+		</StickerRow>
+	</StickerRows>
+</DocumentSticker>
+```
