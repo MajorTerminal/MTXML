@@ -169,6 +169,34 @@
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ItemCategory6" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Дополнительная информация о товаре" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ItemCategory7" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Дополнительная информация о товаре" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ItemCategory8" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Дополнительная информация о товаре" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ItemCategory9" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Дополнительная информация о товаре" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
                     <xs:element minOccurs="1" maxOccurs="1" name="BaseUOM" type="xs:string">
                       <xs:annotation>
                         <xs:appinfo>
@@ -532,6 +560,7 @@
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Version" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="HSCode" type="xs:string" />
                     <xs:element name="Model" type="xs:string">
                       <xs:annotation>
                         <xs:appinfo>
@@ -632,6 +661,13 @@
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Price" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Цена товара" />
+                        </xs:appinfo>
+                      </xs:annotation>
                     </xs:element>
                   </xs:sequence>
                 </xs:complexType>
