@@ -192,6 +192,27 @@
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode1" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Идентификатор заказа маркетплейса 1" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode2" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Идентификатор заказа маркетплейса 2" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="MarketplaceCode3" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Идентификатор заказа маркетплейса 3" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
                     <xs:element minOccurs="0" maxOccurs="1" name="AddressType" type="xs:string">
                       <xs:annotation>
                         <xs:appinfo>
