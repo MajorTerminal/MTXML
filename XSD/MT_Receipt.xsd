@@ -148,7 +148,6 @@
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element name="UpdateGoods" type="xs:string" />
               <xs:element minOccurs="0" maxOccurs="1" name="CreateCustomerInfo" type="xs:int">
                 <xs:annotation>
                   <xs:appinfo>
