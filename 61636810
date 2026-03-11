@@ -1,0 +1,210 @@
+# Множественная заявка на отгрузку товаров со склада
+
+## Назначение и описание
+Передается из ERP в WMS для создания нескольких заявок на отгрузку товаров, а так же при необходимости обновления уже существующих документов.
+
+Обновление уже существующего в WMS документа возможно до тех пор, пока документ не взят в работу, в случае, когда документ уже взят в работу, то в ответ придет сообщение с ошибкой обработки документа по указанной причине. Поиск документов осуществляется только по полю «ShipmentNumber».
+
+В случае отсутствия описания товаров в WMS в момент загрузки документа, то данный документ не будет записан в систему, а в ответ придет сообщение с указанием отсутствующих описаний товаров.
+
+Информация о машине является не обязательной к заполнению (зависит от требований бизнес процесса при работе со складом) и если информация не передается, то этот раздел должен быть опущен полностью, иначе возникнет ошибка создания пропуска на машину с не заполненными реквизитами.
+
+## Описание полей
+
+Уровень | Тег | Описание | Частота | Тип данных | Размер поля | Комментарий
+--------|-----|----------|---------|------------|-------------|------------
+0       | ShipmentMultiPart|                                                    | 1..1            |            |             |
+1       | Row   |                                                     | 1..1           |            |             |
+2|CustomerCode | Код клиента | 1..1 | String | 20 |
+2|ProjectCode | Код проекта | 1..1 | String | 20 | 
+2|StockCode | Код склада | 1..1 | String | 20 | 
+2       | ShipmentNumber   | Уникальный номер заявки на отгрузку товаров                | 1..1    | String     | 50          |                                                           
+2       | ShipmentDate     | Дата документа отгрузки                                    | 1..1    | DateTime   |             |
+2       | NecessaryDate    | Дата требуемой отгрузки со склада                          | 0..1    | DateTime   |             |
+2       | NecessaryTime    | Временной интервал приезда транспорта на склад за товарами | 0..1    | String     | 20          | Допустимые значения согласовываются с менеджером
+2       | CompletedDate    | Дата выполнения заявки                                     | 0..1    | DateTime   |             |
+2       | ActionType       | Тип действия заявки                                        | 0..1    | String     | 10          |                                                           
+2       | Urgent           | Признак срочности заявки.                                  | 0..1    | Integer    |             | 0 – обычная<br />1 – срочная
+2       | DocExtField1        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField2        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField3        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField4        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField5        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField6        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField7        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField8        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField9        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocExtField10       | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | DocLotFiled1        | Расширенные данные партии                                  | 0..1    | String     | 50          |                                                           
+2       | DocLotFiled2        | Расширенные данные партии                                  | 0..1    | String     | 50          |                                                           
+2       | DocLotFiled3        | Расширенные данные партии                                  | 0..1    | String     | 50          |                                                           
+2       | DocLotFiled4        | Расширенные данные партии                                  | 0..1    | String     | 50          |                                                           
+2       | DocLotFiled5        | Расширенные данные партии                                  | 0..1    | String     | 50          |
+2       | PartCode        | Порядковый номер части документа отгрузки                                         | 0..1    | Integer     |           |                                                           
+2       | PartName        | Номер части документа отгрузки                                         | 1..1    | String     | 50          |                                                           
+2       | PartActionType        | Тип действия части  документа отгрузки                                      | 0..1    | String     | 20          |               
+2       | PartExtField1        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField2        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField3        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField4        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField5        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField6        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField7        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField8        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField9        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+2       | PartExtField10       | Расширенные данные                                         | 0..1    | String     | 80          | 
+2       | TotalAmount      | Сумма к оплате по заказу.                                  | 0..1    | Decimal    |             |
+2       | DeliveryCost     | Стоимость доставки.  	                                | 0..1    | Decimal    |             |
+2       | PaymentType      | Тип оплаты заказа	                                        | 0..1    | Integer    |             | 0 - требует оплаты<br />1 - предоплачен
+2       | ShipTo           | Грузополучатель                                            | 1..1    |            |             |                                                           
+3       | ShipToOnlyFind         | Флаг поиска. Отключает добавление отсутствующих данных     | 0..1    | Boolean    |             |                                                           
+3       | ShipToCode             | Уникальный код получателя                                  | 0..1    | String     | 20          |                                                           
+3       | ShipToName             | Наименование                                               | 0..1    | String     | 100         |                                                           
+3       | ShipToCity             | Город                                                      | 0..1    | String     | 30          |                                                           
+3       | ShipToAddress          | Адрес                                                      | 0..1    | String     | 250         |                                                           
+3       | ShipToContact          | Контактное лицо                                            | 0..1    | String     | 250         |                                                           
+3       | ShipToContactPhone     | Телефон контактного лица                                   | 0..1    | String     | 100         |                                                           
+3       | ShipToEmail            | E-mail контактного лица                                    | 0..1    | String     | 200         |                                                           
+3       | ShipToIndex            | Индекс                                                     | 0..1    | String     | 20          |                                                           
+3       | ShipToCountry          | Страна                                                     | 0..1    | String     | 30          |                                                           
+3       | ShipToPriority         | Приоритет                                                  | 0..1    | Integer    |             |                                                           
+3       | ShipToComment          | Комментарий                                                | 0..1    | String     | 250         |
+3       | ShipToDeliveryTerminal | Терминал доставки  					| 0..1    | String     | 50          |                                                          
+2       | ShipToAgent      | Агент грузополучателя                                      | 0..1    |            |             |                                                           
+3       | ShipToOnlyFindAgent         | Флаг поиска. Отключает добавление отсутствующих данных     | 0..1    | Boolean    |             |                                                           
+3       | ShipToAgentFillByShipTo         | Флаг заполнения. заполняет данными из блока ShipTo     | 0..1    | Boolean    |             |                                                           
+3       | ShipToCodeAgent            | Уникальный код адреса                                      | 0..1    | String     | 20          |                                                           
+3       | ShipToNameAgent             | Наименование                                               | 0..1    | String     | 100         |                                                           
+3       | ShipToCountryAgent             | Город                                                      | 0..1    | String     | 30          |                                                           
+3       | ShipToCityAgent             | Город                                                      | 0..1    | String     | 30          |                                                           
+3       | ShipToPostCodeAgent          | Адрес                                                      | 0..1    | String     | 250         |                                                           
+3       | ShipToAddressAgent          | Контактное лицо                                            | 0..1    | String     | 250         |                                                           
+3       | ShipToContactAgent     | Телефон контактного лица                                   | 0..1    | String     | 100         |                                                           
+3       | ShipToContactPhoneAgent            | E-mail контактного лица                                    | 0..1    | String     | 200         |                                                           
+3       | ShipToEmailAgent            | Индекс                                                     | 0..1    | String     | 20          |                                                           
+3       | ShipToRegionAgent          | Страна                                                     | 0..1    | String     | 30          |                                                           
+3       | ShipToDeliveryTerminalAgent         | Приоритет                                                  | 0..1    | Integer    |             |                                                           
+3       | ShipToCommentAgent          | Комментарий                                                | 0..1    | String     | 250         |                                                                                                                    
+2       | DeliveryAgent    | Код перевозчика по доставке товара                         | 0..1    | String     | 10          |                                                           
+2       | DeliveryDocument | Номер накладной                                            | 0..1    | String     | 20          |        
+2       | MarketplaceCode1 | Идентификатор заказа маркетплейса 1                        | 0..1    | String     | 30          |  
+2       | MarketplaceCode2 | Идентификатор заказа маркетплейса 2                        | 0..1    | String     | 30          |  
+2       | MarketplaceCode3 | Идентификатор заказа маркетплейса 3                        | 0..1    | String     | 30          |                                                          
+2       | Sender           | Наименование отправителя груза                             | 0..1    | String     | 100         |                                                           
+2       | SenderAddress    | Адрес отправителя груза                                    | 0..1    | String     | 100         |                                                           
+2       | SenderContacts   | Контакты отправителя груза                                 | 0..1    | String     | 50          |                                                           
+2       | Comment          | Комментарий                                                | 0..1    | String     | 250         |                                          
+3       | LineNo           | Номер строки                                               | 0..1    | Integer    |             |                                                           
+3       | Article          | Артикул товара                                             | 1..1    | String     | 100         | Если отсутствует, то обязательно заполнить  Barcode  
+3       | Barcode          | Штрихкод товара                                            | 0..1    | String     | 100         |   
+3       | CustomerItemCode | Код товара в системе клиента                               | 0..1    | String     | 100         |       
+3       | UOM              | Единица измерения                                          | 1..1    | String     | 10          |                                                           
+3       | Quantity         | Количество                                                 | 1..1    | Decimal    |             |                                                           
+3       | ExtField1        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField2        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField3        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField4        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField5        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField6        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField7        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField8        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField9        | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | ExtField10       | Расширенные данные                                         | 0..1    | String     | 80          |                                                           
+3       | SerialNo         | Серийный номер                                             | 0..1    | String     | 20          |                                                           
+3       | ParentSerialNo   | Серийный номер грузоместа                                  | 0..1    | String     | 20          |                                                           
+3       | BestBeforeDate   | Срок годности                                              | 0..1    | DateTime   |             |
+3       | BatchCode        | Номер партии                                               | 0..1    | String     | 100         |                                                           
+3       | LotField1        | Расширенные данные                                         | 0..1    | String     | 100         |                                                           
+3       | LotField2        | Расширенные данные                                         | 0..1    | String     | 100         |                                                           
+3       | LotField3        | Расширенные данные                                         | 0..1    | String     | 100         |                                                           
+3       | LotField4        | Расширенные данные                                         | 0..1    | String     | 100         |                                                           
+3       | LotField5        | Расширенные данные                                         | 0..1    | String     | 100         |                                                           
+3       | LotCostCenter    | Центр ответственности партии                               | 0..1    | String     | 50          |                                                           
+3       | ItemSerialNo     | Серийный номер товара партии                               | 0..1    | String     | 30          |                                                           
+3       | Price            | Цена реализации за 1 единицу товара без НДС                | 0..1    | Decimal    |             |                                                           
+3       | PriceInclVAT     | Цена реализации за 1 единицу товара с НДС                  | 0..1    | Decimal    |             |                                                           
+3       | Amount           | Стоимость строки без НДС                                   | 0..1    | Decimal    |             |                                                           
+3       | AmountInclVAT    | Стоимость строки с НДС                                     | 0..1    | Decimal    |             |                                                           
+3       | VatCode          | Ставка НДС                                                 | 0..1    | String     |             |Код ставки НДС, значение требуется согласовать                                                           
+1       | CarInfo          | Информация о машине                                        | 0..1    |            |             |                                                           
+2       | Driver           | ФИО водителя                                               | 1..1    | String     | 100         |                                                           
+2       | CarMark          | Марка машины                                               | 1..1    | String     | 50          |                                                           
+2       | CarNo            | Гос. номер машины                                          | 1..1    | String     | 20          |                                                           
+2       | PlanEntranceDate | Плановая дата въезда                                       | 0..1    | String     | 20          |                                                           
+
+## Описание схемы
+<a href="https://github.com/MajorTerminal/MTXML/blob/master/XSD/MT_ShipmentMultiPart.xsd" rel="XSD">![Foo](https://user-images.githubusercontent.com/22858622/134012526-73d1b128-a2cd-4d14-8a13-10f81a57c04f.png)</a>
+
+## Пример XML
+```
+<ns0:ShipmentMultiPart xmlns:ns0="http://MT.BTS.DataExchange.MT_ShipmentMultiPart">
+	<Row>
+		<CustomerCode>К00000</CustomerCode>
+		<ProjectCode>MAJOR</ProjectCode>
+		<StockCode>SLOBODA</StockCode>
+		<ShipmentNumber>Ship_10056</ShipmentNumber>
+		<ShipmentDate>2020-07-17 00:00:00.000</ShipmentDate>
+		<NecessaryDate>2020-07-20 00:00:00.000</NecessaryDate>
+		<PartName>SH10056</PartName>
+		<PartActionType>PODB_I</PartActionType>
+		<ShipTo>
+			<Code>M19</Code>
+			<Name>Магазин М19</Name>
+			<City>Москва</City>
+			<Address>Преображенская площадь д.19</Address>
+			<Contact>Фамилия Имя</Contact>
+			<ContactPhone>8(495)34444444</ContactPhone>
+			<Email>lastname@email.com</Email>
+			<Index>190000</Index>
+		</ShipTo>
+		<DeliveryAgent>LTL</DeliveryAgent>
+		<ExtField1>Z10000L</ExtField1>
+		<Article>7281</Article>
+		<UOM>ШТ</UOM>
+		<Quantity>50</Quantity>
+		<BestBeforeDate>2020-12-31 00:00:00.000</BestBeforeDate>
+		<BatchCode>Z120101ZAR10</BatchCode>
+		<LotField1>3485873457534</LotField1>
+		<LotField2>A19</LotField2>
+		<Price>100</Price>
+		<PriceInclVAT>108</PriceInclVAT>
+		<Amount>5000</Amount>
+		<AmountInclVAT>5400</AmountInclVAT>
+		<VAT>8</VAT>
+	</Row>
+	<Row>
+		<CustomerCode>К00000</CustomerCode>
+		<ProjectCode>MAJOR</ProjectCode>
+		<StockCode>SLOBODA</StockCode>
+		<ShipmentNumber>Ship_10056</ShipmentNumber>
+		<ShipmentDate>2020-07-17 00:00:00.000</ShipmentDate>
+		<NecessaryDate>2020-07-20 00:00:00.000</NecessaryDate>
+		<PartName>SH10057</PartName>
+		<PartActionType>PODB_S</PartActionType>
+		<ShipTo>
+			<Code>M2</Code>
+			<Name>Магазин М2</Name>
+			<City>Москва</City>
+			<Address>Преображенская площадь д.2</Address>
+			<Contact>Фамилия Имя</Contact>
+			<ContactPhone>8(495)34444444</ContactPhone>
+			<Email>lastname@email.com</Email>
+			<Index>190000</Index>
+		</ShipTo>
+		<DeliveryAgent>LTL</DeliveryAgent>
+		<ExtField1>Z20000L</ExtField1>
+		<Article>7281</Article>
+		<UOM>ШТ</UOM>
+		<Quantity>50</Quantity>
+		<BestBeforeDate>2020-12-31 00:00:00.000</BestBeforeDate>
+		<BatchCode>Z120101ZAR10</BatchCode>
+		<LotField1>3485873457534</LotField1>
+		<LotField2>A19</LotField2>
+		<Price>100</Price>
+		<PriceInclVAT>108</PriceInclVAT>
+		<Amount>5000</Amount>
+		<AmountInclVAT>5400</AmountInclVAT>
+		<VAT>8</VAT>
+	</Row>
+</ns0:ShipmentMultiPart>
+```
