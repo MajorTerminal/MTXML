@@ -502,6 +502,13 @@
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="MarkingGroup" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Группа маркировки ГИС МТ" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
                     <xs:element name="Guid" type="xs:string">
                       <xs:annotation>
                         <xs:appinfo>
