@@ -106,6 +106,13 @@
                       </xs:annotation>
                     </xs:element>
                     <xs:element minOccurs="0" maxOccurs="1" name="BarCode" type="xs:string" />
+                    <xs:element name="GTIN" type="xs:string" maxOccurs="1" minOccurs="0">
+                        <xs:annotation>
+                          <xs:appinfo>
+                             <b:fieldInfo notes="ГТИН"/>
+                          </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
                     <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string">
                       <xs:annotation>
                         <xs:appinfo>
