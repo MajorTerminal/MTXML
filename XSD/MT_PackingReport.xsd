@@ -337,6 +337,77 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="PackageDimensions">
+          <xs:annotation>
+            <xs:appinfo>
+              <b:recordInfo notes="Весогабаритные характеристики грузомест" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Package">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <b:recordInfo notes="Характеристики грузоместа" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="SerialNo" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Серийный номер грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="PackageType" type="xs:string">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Тип грузоместа (например PALLET или BOX)" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Cubage" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Объем грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Weight" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Вес грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Length" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Длина грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Width" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Ширина грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Height" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <b:fieldInfo notes="Высота грузоместа" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element minOccurs="1" maxOccurs="1" name="PackingReport-Summary">
           <xs:complexType>
             <xs:sequence>
